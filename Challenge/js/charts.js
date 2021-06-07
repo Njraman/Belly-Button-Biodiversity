@@ -78,23 +78,21 @@ function buildCharts(sample) {
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
     //  so the otu_ids with the most bacteria are last. 
-   // var y  = sample_valuesArray.slice(0,9).sort((a,b) => a-b);
-    //console.log(y);
     var yticks = otu_idsArray.slice(0,10).reverse()
     .map(function(ids){
     return "OTU " + ids
     });
-    console.log(yticks);
+    
 
     var xticks = sample_valuesArray.slice(0,10).reverse().map(function(values){
       return values
     });
-    console.log(xticks);
+    
 
     var labels = otu_labelsArray.slice(0,10).reverse().map(function(labels){
       return labels
     });
-    console.log(labels);
+    
 
     // 8. Create the trace for the bar chart. 
     var trace = {
@@ -120,9 +118,7 @@ function buildCharts(sample) {
     Plotly.newPlot("bar", barData, barLayout);
 
     // 1. Create the trace for the bubble chart.
-    //var xvalues = otu_idsArray.slice(0,10).reverse().map(function(ids){
-     // return ids
-     // });
+    
     var bubbletrace = {
       x: otu_idsArray,
       y: sample_valuesArray,
@@ -171,14 +167,14 @@ function buildCharts(sample) {
         
     // 2. Create a variable that holds the first sample in the metadata array.
         var result = resultArray[0];
-        console.log(result);
+        
 
     // Create variables that hold the otu_ids, otu_labels, and sample_values.
     // COMPLETED ABOVE AS PART OF DELIVERABLE 1
 
     // 3. Create a variable that holds the washing frequency.
           var wfreq = parseFloat(result["wfreq"]);
-          console.log(wfreq);
+        
 
     // Create the yticks for the bar chart.
     // COMPLETED ABOVE AS PART OF DELIVERABLE 1
